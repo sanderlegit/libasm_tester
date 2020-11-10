@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/08 13:05:52 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/18 22:58:38 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:01:40 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		strcpy_test(char *dest, const char *src, size_t size)
 	fail = 0;
 	bzero(dest, SIZE);
 
-	ret = ft_strcpy(dest, src);
+	ret = _ft_strcpy(dest, src);
 	cmp = strcmp(dest, src);
 
 	if (cmp)

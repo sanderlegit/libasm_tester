@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/09 12:41:21 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/18 22:59:14 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:02:26 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		write_fd_test(int fd, char *ftbuf, char *sysbuf)
 	if (fd == 2 || fd == 1 || fd == 0)
 		write(fd, "\n", 1);
 
-	ftret = ft_write(fd, "test write to fd", 16);	//Write with ft_write
+	ftret = _ft_write(fd, "test write to fd", 16);	//Write with ft_write
 	fterrno = errno;
 	if (fd == 2 || fd == 1 || fd == 0)
 		write(fd, "\n", 1);
@@ -81,7 +81,7 @@ int		write_test(char *str, char *ftbuf, char *sysbuf, size_t size)
 	bzero(sysbuf, SIZE);
 
 	ftfd = open_safe("text1.txt", O_RDWR, 0664);	//Write with ft_write
-	ftret = ft_write(ftfd, str, size);
+	ftret = _ft_write(ftfd, str, size);
 	fterrno = errno;
 	close_safe(ftfd);
 

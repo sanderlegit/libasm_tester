@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/08 13:18:04 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/18 22:59:37 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:01:44 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		strcmp_test(const char *s1, const char *s2)
 	int		ft;
 
 	sys = strcmp(s1, s2);
-	ft = ft_strcmp(s1, s2);
+	ft = _ft_strcmp(s1, s2);
 
 	printf("%-3d %-3d: %d, %-34.34s %-33.33s\n", sys, ft, sys != ft, s1, s2);
 	if (FAILEXIT && sys != ft)

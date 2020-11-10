@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 14:59:06 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/18 23:02:17 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:02:14 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		read_test(char *str, char *ftbuf, char *sysbuf, size_t size)
 	close_safe(fd);
 
 	fd = open_safe("text1.txt", O_RDWR, 0664);		//Read with ft_write
-	ftret = ft_read(fd, ftbuf, size);
+	ftret = _ft_read(fd, ftbuf, size);
 	fterrno = errno;
 	ftbuf[ftret] = '\0';
 	close_safe(fd);

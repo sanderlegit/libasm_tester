@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/08 12:53:50 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/18 22:48:41 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 14:59:55 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		strlen_test(char *str)
 	size_t	ft;
 
 	sys = strlen(str);
-	ft = ft_strlen(str);
+	ft = _ft_strlen(str);
 
 	printf("%-6lu %-6lu: %d, %-62.62s\n", sys, ft, sys != ft, str);
 	if (FAILEXIT && sys != ft)
