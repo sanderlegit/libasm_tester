@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 12:48:35 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/19 16:23:04 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:48:59 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,9 @@ int		main()
 	printf("sys    ft     sys ft : ?  sys			      ft\n");
 	fail += read_test((void *)0, buf2, buf3, 0);
 	fail += read_test(strcpy(buf, "read test numero uno"), buf2, buf3, 20);
+	fail += read_error_test(-1, buf2, buf3, 0);
+	fail += read_error_test(8, buf2, buf3, 0);
+	fail += read_error_test(42, buf2, buf3, 0);
 	read_test_rand(buf, buf2, buf3, &fail, SIZE);
 
 	//strdup tests

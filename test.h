@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/08 13:00:56 by averheij      #+#    #+#                 */
-/*   Updated: 2020/06/18 14:19:02 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:48:43 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void			write_test_rand(char *strbuf, char *ftbuf, char *sysbuf,
 int				read_test(char *str, char *ftbuf, char *sysbuf, size_t size);
 void			read_test_rand(char *strbuf, char *ftbuf, char *sysbuf,
 					int *fail, size_t size);
+int				read_error_test(int fd, char *ftbuf, char *sysbuf, size_t size);
 
 int				strdup_test(char *src, size_t size);
 void			strdup_test_rand(char *buf, int *fail, size_t size);

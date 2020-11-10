@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 14:59:06 by averheij      #+#    #+#                 */
-/*   Updated: 2020/11/10 15:02:14 by averheij      ########   odam.nl         */
+/*   Updated: 2020/11/10 15:49:49 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,37 @@ void	read_test_rand(char *strbuf, char *ftbuf, char *sysbuf, int *fail, size_t s
 		*fail += read_test(randa_nfill(strbuf, testsize), ftbuf, sysbuf, testsize);
 		i++;
 	}
+
 }
 
 void	read_stdin_test()
 {
 	//read from stdin and print out the read in? manually validated
+}
+
+int		read_error_test(int fd, char *ftbuf, char *sysbuf, size_t size) {
+	ssize_t ftret;
+	ssize_t sysret;
+	int		fterrno;
+	int		syserrno;
+	int		fail = 0;
+
+	errno = 0;
+	bzero(ftbuf, SIZE);
+	bzero(sysbuf, SIZE);
+	ftret = _ft_read(fd, ftbuf, size);
+	fterrno = errno;
+	//Write more failing tests you filthy animal
+	sysret = read(fd, sysbuf, size);
+	syserrno = errno;
+	if (ftret != sysret)
+		fail = 1;
+	if (fterrno != syserrno)
+		fail = 1;
+	printf("%-6ld %-6ld %-3d %-3d: %d, %-27.27s %-26.26s\n", sysret, ftret, syserrno, fterrno, fail, sysbuf, ftbuf);
+	if (FAILEXIT && fail)
+		error_out("Failed read test");
+	return (fail);
 }
 
 int		read_test(char *str, char *ftbuf, char *sysbuf, size_t size)
@@ -56,13 +82,13 @@ int		read_test(char *str, char *ftbuf, char *sysbuf, size_t size)
 		error_out("Failed to write test data to file");
 	close_safe(fd);
 
-	fd = open_safe("text1.txt", O_RDWR, 0664);		//Read with ft_write
+	fd = open_safe("text1.txt", O_RDWR, 0664);		//Read with ft_read
 	ftret = _ft_read(fd, ftbuf, size);
 	fterrno = errno;
 	ftbuf[ftret] = '\0';
 	close_safe(fd);
 
-	fd = open_safe("text1.txt", O_RDWR, 0664);		//Read with write
+	fd = open_safe("text1.txt", O_RDWR, 0664);		//Read with read
 	sysret = read(fd, sysbuf, size);
 	syserrno = errno;
 	sysbuf[sysret] = '\0';
