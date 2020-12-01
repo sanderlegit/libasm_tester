@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 12:48:35 by averheij      #+#    #+#                 */
-/*   Updated: 2020/11/10 15:48:59 by averheij      ########   odam.nl         */
+/*   Updated: 2020/12/01 16:31:35 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,14 @@ int		main()
 
 	//strlen tests
 	printf("\n\t\t\t------strlen tests------\n");
+	//return value, system and ft, their equality, and the string
 	printf("sys == ft    : ?, str\n");
 	fail += strlen_test("");
 	fail += strlen_test("S");
 	fail += strlen_test("wow they're getting pretty crazy now &!@#$");
 	fail += strlen_test("this is as long as we can get a string and stillnorm");
+	fail += strlen_test("lorem\tipsum\tdolor\nsit\namet\n");
+	fail += strlen_test("\n\n\f\r\t");
 	fail += strlen_test(randa_nfill(buf, SIZE));
 	strlen_test_rand(buf, &fail, SIZE);
 
