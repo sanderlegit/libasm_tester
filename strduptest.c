@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 13:12:50 by averheij      #+#    #+#                 */
-/*   Updated: 2020/12/01 16:29:42 by averheij      ########   odam.nl         */
+/*   Updated: 2020/12/01 16:35:50 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		strdup_test(char *src, size_t size)
 	ft = _ft_strdup(src);
 	syserrno = errno;
 
-	cmp = strncmp(sys, ft, strlen(src + 1));
+	cmp = strncmp(sys, ft, strlen(src) + 1);
 	if (cmp)
 		fail = 0;
 	if (fterrno != syserrno)
