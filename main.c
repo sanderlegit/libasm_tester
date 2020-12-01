@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/05 12:48:35 by averheij      #+#    #+#                 */
-/*   Updated: 2020/12/01 16:31:35 by averheij      ########   odam.nl         */
+/*   Updated: 2020/12/01 16:40:50 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,13 @@ int		main()
 	fail += strcmp_test("abdc", "abcc");
 	fail += strcmp_test("ABBA", "ABZA");
 	fail += strcmp_test("ABZA", "ABBA");
+	fail += strcmp_test("salut", "salut");
+	fail += strcmp_test("test", "testss");
+	fail += strcmp_test("testss", "test");
+	fail += strcmp_test("test", "tEst");
+	fail += strcmp_test("", "test");
+	fail += strcmp_test("test", "");
+	fail += strcmp_test("test\200", "test\0");
 	strcmp_test_rand(buf, buf2, &fail, SIZE);
 
 	//write tests
